@@ -2,7 +2,7 @@
 
 A mod for fixing broken quests in Escape from Duckov game.
 
-![Preview](preview.png)
+<img src="preview.png" width="600">
 
 ## Features
 
