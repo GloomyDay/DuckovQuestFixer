@@ -2,7 +2,7 @@
 
 A mod for fixing broken quests in Escape from Duckov game.
 
-<img src="preview.png" width="600">
+<img src="preview.png" width="200">
 
 ## Features
 
@@ -175,3 +175,4 @@ Free to use and modify.
 
 - [duckov_modding](https://github.com/xvrsl/duckov_modding) - Official modding guide
 - [DuckovCheatMenu](https://github.com/MoDz420/DuckovCheatMenu) - Special thanks to the creator! I learned mod structure, window management, and other implementation approaches by studying this mod. 
+
