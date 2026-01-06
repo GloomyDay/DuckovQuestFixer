@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>QuestFixer</AssemblyName>
+    <RootNamespace>QuestFixer</RootNamespace>
+    
+    <!-- Path to Escape from Duckov game -->
+    <DuckovPath>C:\Program Files (x86)\Steam\steamapps\common\Escape from Duckov</DuckovPath>
+  </PropertyGroup>
+
+  <!-- References to game DLLs (guide: https://github.com/xvrsl/duckov_modding) -->
+  <ItemGroup>
+    <Reference Include="$(DuckovPath)\Duckov_Data\Managed\TeamSoda.*" />
+    <Reference Include="$(DuckovPath)\Duckov_Data\Managed\ItemStatsSystem.dll" />
+    <Reference Include="$(DuckovPath)\Duckov_Data\Managed\Unity*" />
+  </ItemGroup>
+
+  <!-- Harmony 2.4.1 - recommended version per guide -->
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+  </ItemGroup>
+
+  <!-- Auto-copy to mods folder after build -->
+  <Target Name="CopyToModFolder" AfterTargets="Build">
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" 
+          DestinationFolder="$(DuckovPath)\Duckov_Data\Mods\QuestFixer" 
+          SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>
